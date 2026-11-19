@@ -14,5 +14,4 @@
   allow-newer: true
   allow-newer-deps:
     - fuzzyset
-    - jose-jwt-botan
   ''
