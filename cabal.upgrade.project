@@ -1,0 +1,30 @@
+import: ./project-stackage/nightly-2026-11-19.config
+
+-- We have 1 package.
+packages:
+    .
+
+-- Version equality constraints.
+constraints:
+    QuickCheck ==2.15.0.1
+  , botan-bindings ==0.3.0.0
+  , botan-low ==0.2.0.1
+  , configurator-pg ==0.2.11
+  , crypton ==1.0.6
+  , crypton-x509 ==1.8.0
+  , fuzzyset ==0.2.4
+  , hspec-wai ==0.11.1
+  , hspec-wai-json ==0.11.0
+  , insert-ordered-containers ==0.2.7
+  , jose-jwt-botan ==0.13.0
+  , megaparsec ==9.7.1
+  , postgresql-binary ==0.14.2
+  , swagger2 ==2.8.10
+tests: true
+allow-newer:
+  , fuzzyset:data-default
+  , fuzzyset:text
+
+-- https://github.com/martijnbastiaan/doctest-parallel/blob/main/example/README.md#cabalproject
+write-ghc-environment-files: always
+

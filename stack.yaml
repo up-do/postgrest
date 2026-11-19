@@ -1,6 +1,6 @@
-# When updating, update GHC version in .github/workflows/build.yaml as well.
-resolver: lts-24.48 # 2026-06-30, GHC 9.10.3
+user-message: "WARNING: This stack project is generated."
 
+# When updating, update GHC version in .github/workflows/build.yaml as well.
 nix:
   packages:
     - botan3
@@ -9,7 +9,21 @@ nix:
     - pkg-config
     - zlib
 
+allow-newer: true
+allow-newer-deps:
+  - fuzzyset
+  - hasql
+
+resolver: lts-24.48
+
+# We have 1 package.
+packages:
+  - ./.
+
 extra-deps:
+  # Package versions for published packages either not on Stackage or
+  # not matching the version on Stackage for the resolver we use.
+  # These package-version extra dependencies are equivalent to cabal constraints.
   - aeson-jsonpath-0.4.2.0
   - botan-bindings-0.3.0.0
   - botan-low-0.2.0.1
@@ -20,8 +34,3 @@ extra-deps:
   - http2-5.4.0
   - jose-jwt-botan-0.13.0
   - warp-3.4.14
-
-allow-newer: true
-allow-newer-deps:
-  - fuzzyset
-  - hasql
