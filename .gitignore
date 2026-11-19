@@ -31,3 +31,7 @@ gen_private.json
 .ruff_cache
 postgrest-module-graph.png
 .ghc.environment.*
+
+# Updo
+.updo
+updo
